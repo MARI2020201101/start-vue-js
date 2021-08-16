@@ -12,17 +12,28 @@
 <script>
     var div = document.querySelector("#hello");
     var viewModel = {};
-    Object.defineProperty(viewModel,'str',{
+(function(){
+    init();
+    function init(){
+        Object.defineProperty(viewModel,'str',{
         get: function(){
             console.log("접근");
         },
         set: function(newvalue){
             console.log('할당', newvalue);
-            div.innerHTML=newvalue;
+            setVal(newvalue);
              
             }
 
-    })
+    });
+    }
+    function setVal(value){
+        div.innerHTML=value;
+    }
+
+})()
+  
+
 
 </script>
 </html>
