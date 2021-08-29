@@ -2,7 +2,9 @@
   
   <div>
     {{str}}
-     <app-header v-bind:propsData="str"></app-header>
+     <app-header 
+     v-on:renew="renewStr"
+     v-bind:propsData="str"></app-header>
   </div>
 </template>
 
@@ -16,6 +18,11 @@ import AppHeader from './components/AppHeader.vue'
     },
     components:{
       'app-header':AppHeader
+    },
+    methods:{
+      renewStr:function(){
+        this.str='hi';
+      }
     }
   }
 </script>
